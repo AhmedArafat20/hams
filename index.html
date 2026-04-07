@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مؤسسة همس لنقل الكفالات - الرياض</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --gold-dark: #9A7A2E;
+    --deep: #0D1117;
+    --deep2: #161B22;
+    --deep3: #1C2330;
+    --card: #1E2A38;
+    --text: #F0EDE6;
+    --text-muted: #9BA3AE;
+    --accent: #D4A843;
+    --green: #2EA94E;
+    --phone: #1A73E8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--deep);
+    color: var(--text);
+    direction: rtl;
+    overflow-x: hidden;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.05) 0%, transparent 50%),
+      linear-gradient(160deg, #0D1117 0%, #161B22 40%, #0D1117 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(201,168,76,0.03) 60px, rgba(201,168,76,0.03) 61px),
+      repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(201,168,76,0.03) 60px, rgba(201,168,76,0.03) 61px);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold-light);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    padding: 6px 20px;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-logo {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Amiri', serif;
+    font-size: 2.2rem;
+    color: var(--deep);
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+    animation: fadeUp 0.7s ease both;
+    box-shadow: 0 0 40px rgba(201,168,76,0.25);
+  }
+
+  .hero h1 {
+    font-family: 'Amiri', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin: 1rem 0 2rem;
+    max-width: 500px;
+    line-height: 1.8;
+    animation: fadeUp 0.9s ease both;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeUp 1s ease both;
+  }
+
+  .btn-gold {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    color: var(--deep);
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(201,168,76,0.35);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--gold);
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1.5px solid var(--gold);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-outline:hover {
+    background: rgba(201,168,76,0.1);
+    transform: translateY(-2px);
+  }
+
+  /* ===== DIVIDER ===== */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4), transparent);
+  }
+
+  .divider-icon {
+    color: var(--gold);
+    font-size: 1.2rem;
+  }
+
+  /* ===== SECTIONS ===== */
+  section {
+    padding: 5rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Amiri', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  .section-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.9;
+    max-width: 600px;
+  }
+
+  /* ===== SERVICES ===== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .service-card {
+    background: var(--card);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 16px;
+    padding: 2rem 1.75rem;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 80px; height: 80px;
+    background: radial-gradient(circle, rgba(201,168,76,0.07), transparent);
+    border-radius: 0 16px 0 100%;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(201,168,76,0.35);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+  }
+
+  .service-icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .service-card p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  /* ===== TRANSFER TYPES ===== */
+  .transfer-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  @media(max-width: 600px) {
+    .transfer-row { grid-template-columns: 1fr; }
+  }
+
+  .transfer-card {
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .transfer-card.available {
+    background: linear-gradient(135deg, rgba(46,169,78,0.12), rgba(46,169,78,0.05));
+    border: 1px solid rgba(46,169,78,0.25);
+  }
+
+  .transfer-card.wanted {
+    background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(201,168,76,0.05));
+    border: 1px solid rgba(201,168,76,0.25);
+  }
+
+  .transfer-card .badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 4px 14px;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+  }
+
+  .available .badge {
+    background: rgba(46,169,78,0.15);
+    color: #4ADE80;
+    border: 1px solid rgba(46,169,78,0.3);
+  }
+
+  .wanted .badge {
+    background: rgba(201,168,76,0.15);
+    color: var(--gold-light);
+    border: 1px solid rgba(201,168,76,0.3);
+  }
+
+  .transfer-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .available h3 { color: #4ADE80; }
+  .wanted h3 { color: var(--gold-light); }
+
+  .transfer-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .transfer-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .transfer-card a:hover { opacity: 0.85; transform: translateX(-3px); }
+
+  .available a {
+    background: rgba(46,169,78,0.2);
+    color: #4ADE80;
+    border: 1px solid rgba(46,169,78,0.35);
+  }
+
+  .wanted a {
+    background: rgba(201,168,76,0.2);
+    color: var(--gold-light);
+    border: 1px solid rgba(201,168,76,0.35);
+  }
+
+  /* ===== NATIONALITIES ===== */
+  .flags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .flag-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    transition: transform 0.25s, border-color 0.25s;
+    cursor: default;
+  }
+
+  .flag-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(201,168,76,0.3);
+  }
+
+  .flag-emoji {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .flag-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .flag-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+
+  /* ===== WHY US ===== */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .why-item {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 14px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: border-color 0.3s;
+  }
+
+  .why-item:hover { border-color: rgba(201,168,76,0.3); }
+
+  .why-num {
+    font-family: 'Amiri', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .why-item h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .why-item p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-section {
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 60%),
+      var(--deep2);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    padding: 5rem 1.5rem;
+    text-align: center;
+  }
+
+  .contact-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .contact-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  @media(max-width: 500px) {
+    .contact-cards { grid-template-columns: 1fr; }
+  }
+
+  .contact-card {
+    border-radius: 14px;
+    padding: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+
+  .contact-card.whatsapp {
+    background: linear-gradient(135deg, #0D2E1A, #133D22);
+    border: 1px solid rgba(37,211,102,0.25);
+  }
+
+  .contact-card.phone {
+    background: linear-gradient(135deg, #0D1E3A, #132A50);
+    border: 1px solid rgba(26,115,232,0.25);
+  }
+
+  .contact-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .whatsapp .contact-icon {
+    background: rgba(37,211,102,0.15);
+  }
+
+  .phone .contact-icon {
+    background: rgba(26,115,232,0.15);
+  }
+
+  .contact-card-text { text-align: right; }
+
+  .contact-card-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 3px;
+  }
+
+  .contact-card-num {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .whatsapp .contact-card-num { color: #4ADE80; }
+  .phone .contact-card-num { color: #60A5FA; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--deep);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  footer p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  footer .gold-text { color: var(--gold); }
+
+  /* ===== FLOATING BUTTONS ===== */
+  .floating-btns {
+    position: fixed;
+    bottom: 28px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+  }
+
+  .float-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: transform 0.25s, box-shadow 0.25s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    position: relative;
+  }
+
+  .float-btn:hover {
+    transform: scale(1.12);
+  }
+
+  .float-btn.whatsapp-btn {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+  }
+
+  .float-btn.call-btn {
+    background: linear-gradient(135deg, #1A73E8, #0D47A1);
+  }
+
+  .float-btn .tooltip {
+    position: absolute;
+    right: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(30,42,56,0.95);
+    color: var(--text);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 8px;
+    white-space: nowrap;
+    border: 1px solid rgba(255,255,255,0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+
+  .float-btn:hover .tooltip { opacity: 1; }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== NOTICE BAR ===== */
+  .notice-bar {
+    background: rgba(201,168,76,0.1);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding: 10px 1.5rem;
+    text-align: center;
+  }
+
+  .notice-bar p {
+    font-size: 0.82rem;
+    color: var(--gold-light);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(13,17,23,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-logo {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Amiri', serif;
+    font-size: 1rem;
+    color: var(--deep);
+    font-weight: 700;
+  }
+
+  .nav-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .nav-sub {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  .nav-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 50px;
+    padding: 6px 16px;
+    text-decoration: none;
+    color: var(--gold-light);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .nav-phone:hover { background: rgba(201,168,76,0.18); }
+
+  @media(max-width: 500px) {
+    .nav-phone span.label { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NOTICE BAR -->
+<!-- <div class="notice-bar">
+  <p>⚠️ نحن مؤسسة تنازلات كفالات فقط — لا نقوم بتشغيل الخادمات في المنازل</p>
+</div> -->
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <div class="nav-logo">همس</div>
+    <div>
+      <div class="nav-title">مؤسسة همس</div>
+      <div class="nav-sub">نقل الكفالات — الرياض</div>
+    </div>
+  </div>
+  <a href="tel:0554495052" class="nav-phone">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.18 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.28-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <span class="label">اتصل بنا — </span>0554495052
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">✦ الرياض، المملكة العربية السعودية ✦</div>
+  <div class="hero-logo">همس</div>
+  <h1>مؤسسة <span>همس</span><br>لنقل الكفالات</h1>
+  <p class="hero-sub">
+    خبرة متميزة في نقل كفالات العمالة المنزلية بكل سهولة ويسر.<br>
+    خادمات · شغالات · عاملات منزليات
+  </p>
+  <div class="hero-cta">
+    <a href="https://wa.me/966554495052" class="btn-gold" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      واتساب
+    </a>
+    <a href="tel:0554495052" class="btn-outline">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.18 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.28-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      اتصل الآن
+    </a>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section>
+  <span class="section-label">خدماتنا</span>
+  <h2 class="section-title">ماذا نقدم لك؟</h2>
+  <p class="section-desc">نتخصص حصرياً في نقل وتحويل كفالات العمالة المنزلية بين أصحاب العمل في المملكة العربية السعودية.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">📋</div>
+      <h3>نقل الكفالة</h3>
+      <p>إتمام إجراءات نقل الكفالة بشكل رسمي وسليم من صاحب عمل لآخر وفق الأنظمة المعتمدة.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🤝</div>
+      <h3>تنازل العمالة المنزلية</h3>
+      <p>تيسير عملية التنازل عن خادمات وعاملات منزليات بين الأطراف بسهولة تامة.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔎</div>
+      <h3>توفير عمالة للتنازل</h3>
+      <p>لديك احتياج لخادمة؟ لدينا خادمات متاحة للتنازل من جنسيات متعددة تناسب احتياجك.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📑</div>
+      <h3>استشارة إجراءات الكفالة</h3>
+      <p>نرشدك خطوة بخطوة في كل ما يتعلق بإجراءات النقل والتنازل لضمان سير العملية بسلاسة.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFER -->
+<section style="padding-top: 0;">
+  <div class="divider" style="max-width: 100%; padding: 0 0 3rem;">
+    <div class="divider-line"></div>
+    <span class="divider-icon">✦</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <span class="section-label">التنازلات</span>
+  <h2 class="section-title">خادمات للتنازل ومطلوب خادمات</h2>
+  <p class="section-desc">سواء كنت تبحث عن خادمة أو تريد التنازل عن خادمتك، نحن الوسيط الموثوق لإتمام العملية.</p>
+
+  <div class="transfer-row">
+    <div class="transfer-card available">
+      <span class="badge">✓ متاح</span>
+      <h3>خادمات للتنازل</h3>
+      <p>لدينا خادمات متاحة للتنازل من جنسيات متعددة. تواصل معنا لمعرفة تفاصيل الخادمات المتوفرة حالياً.</p>
+      <a href="https://wa.me/966554495052?text=أريد الاستفسار عن خادمات متاحة للتنازل" target="_blank">
+        استفسر عبر واتساب ←
+      </a>
+    </div>
+    <div class="transfer-card wanted">
+      <span class="badge">🔔 مطلوب</span>
+      <h3>مطلوب خادمات للتنازل</h3>
+      <p>تريد التنازل عن خادمتك؟ تواصل معنا وسنساعدك في إيجاد صاحب عمل مناسب بأسرع وقت.</p>
+      <a href="https://wa.me/966554495052?text=أريد التنازل عن خادمتي" target="_blank">
+        تواصل معنا ←
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NATIONALITIES -->
+<section style="padding-top: 0;">
+  <div class="divider" style="max-width: 100%; padding: 0 0 3rem;">
+    <div class="divider-line"></div>
+    <span class="divider-icon">✦</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <span class="section-label">الجنسيات</span>
+  <h2 class="section-title">العمالة المتاحة حسب الجنسية</h2>
+  <p class="section-desc">نتعامل مع عمالة منزلية من أبرز الجنسيات المعروفة بالخبرة والكفاءة في العمل المنزلي.</p>
+
+  <div class="flags-grid">
+    <div class="flag-card">
+      <span class="flag-emoji">🇵🇭</span>
+      <div class="flag-name">الفلبين</div>
+      <div class="flag-label">Philippines</div>
+    </div>
+    <div class="flag-card">
+      <span class="flag-emoji">🇮🇩</span>
+      <div class="flag-name">إندونيسيا</div>
+      <div class="flag-label">Indonesia</div>
+    </div>
+    <div class="flag-card">
+      <span class="flag-emoji">🇧🇩</span>
+      <div class="flag-name">بنجلاديش</div>
+      <div class="flag-label">Bangladesh</div>
+    </div>
+    <div class="flag-card">
+      <span class="flag-emoji">🇰🇪</span>
+      <div class="flag-name">كينيا</div>
+      <div class="flag-label">Kenya</div>
+    </div>
+    <div class="flag-card">
+      <span class="flag-emoji">🇪🇹</span>
+      <div class="flag-name">إثيوبيا</div>
+      <div class="flag-label">Ethiopia</div>
+    </div>
+    <div class="flag-card">
+      <span class="flag-emoji">🇺🇬</span>
+      <div class="flag-name">أوغندا</div>
+      <div class="flag-label">Uganda</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section style="padding-top: 0;">
+  <div class="divider" style="max-width: 100%; padding: 0 0 3rem;">
+    <div class="divider-line"></div>
+    <span class="divider-icon">✦</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <span class="section-label">لماذا نحن</span>
+  <h2 class="section-title">مميزات مؤسسة همس</h2>
+
+  <div class="why-grid">
+    <div class="why-item">
+      <span class="why-num">✓</span>
+      <h4>إجراءات رسمية</h4>
+      <p>نتعامل وفق الأنظمة واللوائح المعتمدة في المملكة العربية السعودية</p>
+    </div>
+    <div class="why-item">
+      <span class="why-num">6</span>
+      <h4>جنسيات متعددة</h4>
+      <p>نوفر عمالة من ست جنسيات مختلفة لتناسب احتياجاتك</p>
+    </div>
+    <div class="why-item">
+      <span class="why-num">⚡</span>
+      <h4>سرعة في الإنجاز</h4>
+      <p>نسعى لإتمام عملية النقل والتنازل بأسرع وقت ممكن</p>
+    </div>
+    <div class="why-item">
+      <span class="why-num">🤝</span>
+      <h4>خبرة ومصداقية</h4>
+      <p>خبرة متميزة في تقديم خدمات نقل الكفالات للعمالة المنزلية</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section">
+  <div class="contact-inner">
+    <span class="section-label" style="display:block; text-align:center;">تواصل معنا</span>
+    <h2 class="section-title" style="text-align:center;">نحن في خدمتك</h2>
+    <p class="section-desc" style="margin: 0 auto 0.5rem; text-align:center;">
+      للاستفسار عن أي خدمة أو للبدء في إجراءات نقل الكفالة، تواصل معنا مباشرة.
+    </p>
+    <p style="font-size: 0.88rem; color: var(--gold); text-align:center; margin-bottom: 0.5rem;">📍 الرياض، المملكة العربية السعودية</p>
+
+    <div class="contact-cards">
+      <a href="https://wa.me/966554495052" class="contact-card whatsapp" target="_blank">
+        <div class="contact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div class="contact-card-text">
+          <div class="contact-card-label">واتساب</div>
+          <div class="contact-card-num" dir="ltr">0554495052</div>
+        </div>
+      </a>
+      <a href="tel:0554495052" class="contact-card phone">
+        <div class="contact-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.18 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.28-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div class="contact-card-text">
+          <div class="contact-card-label">اتصال مباشر</div>
+          <div class="contact-card-num" dir="ltr">0554495052</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <span class="gold-text">مؤسسة همس لنقل الكفالات</span> — الرياض، المملكة العربية السعودية<br>
+    متخصصون في نقل وتنازل كفالات العمالة المنزلية · نحن مؤسسة تنازلات وليس تشغيل
+  </p>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="floating-btns">
+  <a href="https://wa.me/966554495052" class="float-btn whatsapp-btn" target="_blank" title="واتساب">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="tooltip">واتساب</span>
+  </a>
+  <a href="tel:0554495052" class="float-btn call-btn" title="اتصل الآن">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.18 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.28-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    <span class="tooltip">اتصل الآن</span>
+  </a>
+</div>
+
+</body>
+</html>
